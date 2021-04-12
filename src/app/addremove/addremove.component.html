@@ -1,0 +1,32 @@
+<div class="col-md-2" [formGroup]="addForm">
+    <div class="form-group">
+    
+      <br>
+      
+      <table class="table table-striped"> 
+        <thead>
+          <button class="btn btn-primary" (click)="onAddRow()" *ngIf="addForm.get('rows')">add row</button>
+        </thead> 
+        <tbody>
+          <tr *ngFor="let row of addForm.get('rows')?.controls;let index = index;">
+            <td>
+              FIRST NAME : <input formControlName="FIRST_NAME">
+            </td>
+            <td>
+              LAST NAME : <input formControlName="LAST_NAME">
+            </td> 
+            <td>
+              AGE : <input formControlName="AGE">
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="onRemoveRow(index)">Remove</button>
+            </td>
+          </tr> 
+        </tbody>
+      </table>
+
+      <button class="btn btn-primary" (click)="fetchData()">Save</button>
+
+    </div>
+  </div>
+  

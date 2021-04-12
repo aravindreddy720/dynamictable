@@ -1,0 +1,45 @@
+<div class="col-md-2" [formGroup]="addForm">
+    <div class="form-group">
+      <label class="label-control">Items</label>
+      <br>
+      
+      <!-- <input type="checkbox" class="form-control" formControlName="items"> -->
+
+      <div class="form-check">
+        <input class="form-check-input form-control" formControlName="items" type="checkbox" value="" id="flexCheckDefault">
+      </div>
+      
+        <!-- <span> 
+          {{addForm.value.items_value}} 
+        </span>
+       --> 
+  
+      <table class="table table-light">
+        <thead style="text-align: center;">
+          <button style="margin-top: 27px;" (click)="onAddRow()" *ngIf="addForm.get('rows')">add row</button>
+        </thead> 
+        <tbody>
+          <tr *ngFor="let row of addForm.get('rows')?.controls;let index = index;">
+            <td>
+              name : <input [formControl]="row.get('name')">
+            </td>
+            <td>
+              description : <input [formControl]="row.get('description')"> 
+            </td> 
+            <td>
+              qty : <input [formControl]="row.get('qty')">
+            </td>
+            <td>
+              <button (click)="onRemoveRow(index)">Remove</button>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+
+      <button (click)="fetchData()">Save</button>
+
+      
+    </div>
+  </div>
+  
+  <pre>{{rows.value | json}}</pre>

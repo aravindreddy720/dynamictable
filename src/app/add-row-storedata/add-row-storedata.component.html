@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dis of mapped">
+            <td >
+                {{dis.value.name}}  
+            </td>
+            <td>
+                {{dis.value.description}}
+            </td>
+            <td>
+                {{dis.value.qty}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+ 

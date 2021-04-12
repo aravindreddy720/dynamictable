@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            Some grid
+        </div>
+        <div class="col-sm-8"> 
+            <table class="table  table-primary">
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col}}
+                    </th>
+                </tr>
+                <tr *ngFor="let item of data">
+                    <td *ngFor="let column of columns">{{setData(item[column], column)}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-2">
+            Some Other Grid
+        </div>
+    </div>
+</div>
